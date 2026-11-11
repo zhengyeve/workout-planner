@@ -1,0 +1,24 @@
+# installed packages
+node_modules/
+
+# system files
+.DS_Store
+
+# environment files
+.env
+.env.*
+!.env.example
+
+# test artifacts
+coverage/
+playwright-report/
+test-results/
+*.log
+
+# export
+routine-planner-*.json
+
+# agent generated files
+.superpowers/
+.worktrees/
+docs/superpowers/

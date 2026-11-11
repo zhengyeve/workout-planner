@@ -1,0 +1,338 @@
+[
+  {
+    "options": {
+      "date": "2026-11-11",
+      "target": 200,
+      "maxMinutes": 50
+    },
+    "entries": [
+      {
+        "id": "one",
+        "routineId": "lose-belly-fat",
+        "name": "Lose Belly Fat",
+        "date": "2026-11-11",
+        "slot": "am",
+        "count": 2,
+        "minutes": 9,
+        "kcal": 34,
+        "load": {
+          "legs": 1,
+          "core": 2,
+          "upper": 1,
+          "cardio": 2
+        }
+      },
+      {
+        "id": "two",
+        "routineId": "body-shaper-hiit",
+        "name": "Body Shaper HIIT",
+        "date": "2026-11-09",
+        "slot": "pm",
+        "count": 1,
+        "minutes": 15,
+        "kcal": 129,
+        "load": {
+          "legs": 3,
+          "glutes": 2,
+          "core": 3,
+          "upper": 2,
+          "back": 2,
+          "cardio": 3,
+          "impact": 2
+        }
+      }
+    ],
+    "expected": [
+      {
+        "ids": ["fix-round-posture", "sweat-storm", "upper-body-sculpture-quick", "ultimate-back"],
+        "minutes": 50,
+        "kcal": 188,
+        "repeats": 0,
+        "overloaded": 0,
+        "score": [0, 0, 0, 32, 0, 0, 12, 50]
+      },
+      {
+        "ids": [
+          "get-rid-of-flabby-arms",
+          "sweat-storm",
+          "upper-body-sculpture-quick",
+          "ultimate-back"
+        ],
+        "minutes": 50,
+        "kcal": 189,
+        "repeats": 0,
+        "overloaded": 0,
+        "score": [0, 0, 0, 33, 0, 0, 11, 50]
+      },
+      {
+        "ids": ["sweat-storm", "upper-body-sculpture-quick", "ultimate-back", "morning-body-boost"],
+        "minutes": 50,
+        "kcal": 196,
+        "repeats": 0,
+        "overloaded": 0,
+        "score": [0, 0, 0, 39, 0, 0, 4, 50]
+      }
+    ]
+  },
+  {
+    "options": {
+      "date": "2026-11-11",
+      "target": 200,
+      "maxMinutes": 50,
+      "lowImpact": true
+    },
+    "entries": [
+      {
+        "id": "one",
+        "routineId": "lose-belly-fat",
+        "name": "Lose Belly Fat",
+        "date": "2026-11-11",
+        "slot": "am",
+        "count": 2,
+        "minutes": 9,
+        "kcal": 34,
+        "load": {
+          "legs": 1,
+          "core": 2,
+          "upper": 1,
+          "cardio": 2
+        }
+      },
+      {
+        "id": "two",
+        "routineId": "body-shaper-hiit",
+        "name": "Body Shaper HIIT",
+        "date": "2026-11-09",
+        "slot": "pm",
+        "count": 1,
+        "minutes": 15,
+        "kcal": 129,
+        "load": {
+          "legs": 3,
+          "glutes": 2,
+          "core": 3,
+          "upper": 2,
+          "back": 2,
+          "cardio": 3,
+          "impact": 2
+        }
+      }
+    ],
+    "expected": [
+      {
+        "ids": ["fix-round-posture", "sweat-storm", "upper-body-sculpture-quick", "ultimate-back"],
+        "minutes": 50,
+        "kcal": 188,
+        "repeats": 0,
+        "overloaded": 0,
+        "score": [0, 0, 0, 32, 0, 0, 12, 50]
+      },
+      {
+        "ids": [
+          "get-rid-of-flabby-arms",
+          "sweat-storm",
+          "upper-body-sculpture-quick",
+          "ultimate-back"
+        ],
+        "minutes": 50,
+        "kcal": 189,
+        "repeats": 0,
+        "overloaded": 0,
+        "score": [0, 0, 0, 33, 0, 0, 11, 50]
+      },
+      {
+        "ids": ["sweat-storm", "upper-body-sculpture-quick", "ultimate-back", "morning-body-boost"],
+        "minutes": 50,
+        "kcal": 196,
+        "repeats": 0,
+        "overloaded": 0,
+        "score": [0, 0, 0, 39, 0, 0, 4, 50]
+      }
+    ]
+  },
+  {
+    "options": {
+      "date": "2026-11-11",
+      "target": 100,
+      "maxMinutes": 10
+    },
+    "entries": [
+      {
+        "id": "one",
+        "routineId": "lose-belly-fat",
+        "name": "Lose Belly Fat",
+        "date": "2026-11-11",
+        "slot": "am",
+        "count": 2,
+        "minutes": 9,
+        "kcal": 34,
+        "load": {
+          "legs": 1,
+          "core": 2,
+          "upper": 1,
+          "cardio": 2
+        }
+      },
+      {
+        "id": "two",
+        "routineId": "body-shaper-hiit",
+        "name": "Body Shaper HIIT",
+        "date": "2026-11-09",
+        "slot": "pm",
+        "count": 1,
+        "minutes": 15,
+        "kcal": 129,
+        "load": {
+          "legs": 3,
+          "glutes": 2,
+          "core": 3,
+          "upper": 2,
+          "back": 2,
+          "cardio": 3,
+          "impact": 2
+        }
+      }
+    ],
+    "expected": [
+      {
+        "ids": ["hiit-me-up"],
+        "minutes": 10,
+        "kcal": 49,
+        "repeats": 0,
+        "overloaded": 0,
+        "score": [1, 0, 0, 0, 51, 0, 51, 10]
+      },
+      {
+        "ids": ["sweat-storm"],
+        "minutes": 10,
+        "kcal": 46,
+        "repeats": 0,
+        "overloaded": 0,
+        "score": [1, 0, 0, 0, 54, 0, 54, 10]
+      },
+      {
+        "ids": ["morning-body-boost"],
+        "minutes": 8,
+        "kcal": 30,
+        "repeats": 0,
+        "overloaded": 0,
+        "score": [1, 0, 0, 0, 70, 0, 70, 8]
+      }
+    ]
+  },
+  {
+    "options": {
+      "date": "2026-11-11",
+      "target": 1000,
+      "maxMinutes": 240
+    },
+    "entries": [
+      {
+        "id": "one",
+        "routineId": "lose-belly-fat",
+        "name": "Lose Belly Fat",
+        "date": "2026-11-11",
+        "slot": "am",
+        "count": 2,
+        "minutes": 9,
+        "kcal": 34,
+        "load": {
+          "legs": 1,
+          "core": 2,
+          "upper": 1,
+          "cardio": 2
+        }
+      },
+      {
+        "id": "two",
+        "routineId": "body-shaper-hiit",
+        "name": "Body Shaper HIIT",
+        "date": "2026-11-09",
+        "slot": "pm",
+        "count": 1,
+        "minutes": 15,
+        "kcal": 129,
+        "load": {
+          "legs": 3,
+          "glutes": 2,
+          "core": 3,
+          "upper": 2,
+          "back": 2,
+          "cardio": 3,
+          "impact": 2
+        }
+      }
+    ],
+    "expected": [
+      {
+        "ids": ["ultimate-back"],
+        "minutes": 17,
+        "kcal": 74,
+        "repeats": 0,
+        "overloaded": 0,
+        "score": [1, 0, 0, 0, 926, 0, 926, 17]
+      },
+      {
+        "ids": ["no-jumping-fat-burner"],
+        "minutes": 12,
+        "kcal": 53,
+        "repeats": 0,
+        "overloaded": 0,
+        "score": [1, 0, 0, 0, 947, 0, 947, 12]
+      },
+      {
+        "ids": ["hiit-me-up"],
+        "minutes": 10,
+        "kcal": 49,
+        "repeats": 0,
+        "overloaded": 0,
+        "score": [1, 0, 0, 0, 951, 0, 951, 10]
+      }
+    ]
+  },
+  {
+    "options": {
+      "date": "2026-11-11",
+      "target": 1,
+      "maxMinutes": 1
+    },
+    "entries": [
+      {
+        "id": "one",
+        "routineId": "lose-belly-fat",
+        "name": "Lose Belly Fat",
+        "date": "2026-11-11",
+        "slot": "am",
+        "count": 2,
+        "minutes": 9,
+        "kcal": 34,
+        "load": {
+          "legs": 1,
+          "core": 2,
+          "upper": 1,
+          "cardio": 2
+        }
+      },
+      {
+        "id": "two",
+        "routineId": "body-shaper-hiit",
+        "name": "Body Shaper HIIT",
+        "date": "2026-11-09",
+        "slot": "pm",
+        "count": 1,
+        "minutes": 15,
+        "kcal": 129,
+        "load": {
+          "legs": 3,
+          "glutes": 2,
+          "core": 3,
+          "upper": 2,
+          "back": 2,
+          "cardio": 3,
+          "impact": 2
+        }
+      }
+    ],
+    "expected": []
+  }
+]

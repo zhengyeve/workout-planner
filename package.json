@@ -1,0 +1,25 @@
+{
+  "name": "routine-planner",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 5173 --bind 127.0.0.1 --directory web",
+    "test": "node --test",
+    "test:browser": "playwright test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "check": "npm run format:check && npm run lint && npm test"
+  },
+  "devDependencies": {
+    "@eslint/js": "8.57.1",
+    "@playwright/test": "1.60.0",
+    "eslint": "8.57.1",
+    "globals": "14.0.0",
+    "prettier": "3.8.2"
+  },
+  "version": "1.1.0",
+  "description": "A private, offline-capable workout journal and routine planner.",
+  "engines": {
+    "node": ">=22"
+  }
+}

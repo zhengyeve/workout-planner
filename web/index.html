@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#111b18" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Routine Planner</title>
+  </head>
+  <body>
+    <header>
+      <div class="brand"><span>↗</span> ROUTINE PLANNER</div>
+      <span class="privacy">On this device</span>
+    </header>
+    <main>
+      <section id="today">
+        <div class="intro">
+          <p class="eyebrow">01 / DAILY TRAINING</p>
+          <h1>Workout journal</h1>
+          <p>Log today. Plan your next workout.</p>
+        </div>
+        <div class="toolbar">
+          <label>Workout date <input id="date" type="date" required /></label
+          ><button type="button" class="secondary" id="jump-today">Today</button>
+        </div>
+        <div class="metrics" id="metrics"></div>
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <p class="eyebrow">WORKOUT LOG</p>
+              <h2>Completed</h2>
+            </div>
+            <button class="primary" id="add">＋ Log workout</button>
+          </div>
+          <div id="daily"></div>
+        </article>
+        <article class="card">
+          <p class="eyebrow">NEXT SESSION</p>
+          <h2>Next workout</h2>
+          <form id="recommend" class="stack">
+            <div class="two">
+              <label
+                >Target App kcal<input
+                  id="target"
+                  type="number"
+                  min="1"
+                  max="1000"
+                  value="200"
+                  required
+                  inputmode="numeric" /></label
+              ><label
+                >Time limit (minutes)<input
+                  id="limit"
+                  type="number"
+                  min="1"
+                  max="240"
+                  value="50"
+                  required
+                  inputmode="numeric"
+              /></label>
+            </div>
+            <div class="two">
+              <label
+                >Time of day<select id="plan-slot">
+                  <option value="pm">Evening</option>
+                  <option value="am">Morning</option>
+                </select></label
+              ><label class="check"><input id="impact" type="checkbox" /> Low impact only</label>
+            </div>
+            <button class="primary">Generate recommendations</button>
+          </form>
+          <div id="plans"></div>
+        </article>
+      </section>
+      <section id="history" hidden>
+        <div class="intro">
+          <p class="eyebrow">02 / TRAINING HISTORY</p>
+          <h1>Workout history</h1>
+          <p>Review recent activity and training load.</p>
+        </div>
+        <article class="card">
+          <div class="card-head">
+            <h2>Recent overview</h2>
+            <select id="window" aria-label="History range">
+              <option value="7">Last 7 days</option>
+              <option value="3">Last 3 days</option>
+            </select>
+          </div>
+          <div id="overview"></div>
+          <div id="loads"></div>
+          <small>Training loads are estimates based on exercises and logged repetitions.</small>
+          <details>
+            <summary>Routine frequency</summary>
+            <div id="frequency"></div>
+          </details>
+        </article>
+        <article class="card">
+          <h2>All records</h2>
+          <div id="all-entries"></div>
+        </article>
+      </section>
+      <section id="bank" hidden>
+        <div class="intro">
+          <p class="eyebrow">03 / ROUTINE BANK</p>
+          <h1>Routine library</h1>
+          <p>Updated 2026-11-10 · <span id="bank-size"></span> routines</p>
+        </div>
+        <label class="search"
+          >Search routines or exercises<input
+            id="search"
+            type="search"
+            placeholder="For example, HIIT Walking"
+        /></label>
+        <div id="catalog"></div>
+      </section>
+      <section id="settings" hidden>
+        <div class="intro">
+          <p class="eyebrow">04 / YOUR DATA</p>
+          <h1>Data and backup</h1>
+          <p>Workout history is stored in this browser.</p>
+        </div>
+        <article class="card stack">
+          <h2>JSON backup</h2>
+          <p>
+            Restoring a backup replaces local history. Export a copy before changing devices or
+            clearing browser data.
+          </p>
+          <button class="primary" id="export">Export history</button
+          ><label
+            >Choose JSON backup<input
+              id="import"
+              type="file"
+              accept=".json,application/json" /></label
+          ><button id="restore" class="secondary" disabled>Restore selected backup</button>
+        </article>
+        <article class="card">
+          <h2>Add to iPhone Home Screen</h2>
+          <p>
+            Open this site over HTTPS in Safari, then choose Share → Add to Home Screen. After the
+            app finishes caching online, you can use it offline.
+          </p>
+        </article>
+      </section>
+      <p id="notice" role="status" aria-live="polite"></p>
+    </main>
+    <nav aria-label="Main navigation">
+      <button data-tab="today" aria-current="page">◉ <span>Today</span></button
+      ><button data-tab="history">▤ <span>History</span></button
+      ><button data-tab="bank">▦ <span>Routine library</span></button
+      ><button data-tab="settings">⚙ <span>Backup</span></button>
+    </nav>
+    <dialog id="entry-dialog" aria-labelledby="entry-title">
+      <form id="entry-form" class="stack">
+        <div class="card-head">
+          <h2 id="entry-title">Log workout</h2>
+          <button type="button" id="close" class="secondary">Cancel</button>
+        </div>
+        <div class="two">
+          <label>Date<input name="date" type="date" required /></label
+          ><label
+            >Time of day<select name="slot">
+              <option value="am">Morning</option>
+              <option value="pm">Evening</option>
+            </select></label
+          >
+        </div>
+        <label>Routine<select name="routine" id="routine-select"></select></label>
+        <div id="custom" hidden>
+          <label
+            >Name<input
+              name="customName"
+              maxlength="120"
+              placeholder="Light cardio / shoulders and arms"
+          /></label>
+          <div class="two">
+            <label
+              >Minutes per repetition<input
+                name="minutes"
+                type="number"
+                min="1"
+                max="600"
+                inputmode="numeric" /></label
+            ><label
+              >App kcal per repetition<input
+                name="kcal"
+                type="number"
+                min="0"
+                max="3000"
+                inputmode="numeric"
+            /></label>
+          </div>
+          <fieldset>
+            <legend>Training load</legend>
+            <div id="custom-tags" class="two"></div>
+          </fieldset>
+        </div>
+        <label
+          >Repetitions<input
+            name="count"
+            type="number"
+            min="1"
+            max="20"
+            value="1"
+            required
+            inputmode="numeric"
+        /></label>
+        <p id="entry-total" class="muted"></p>
+        <button type="submit" class="primary">Save workout</button>
+        <button id="remove" type="button" class="danger" hidden>Delete record</button>
+      </form>
+    </dialog>
+    <script type="module" src="./app.mjs"></script>
+  </body>
+</html>
